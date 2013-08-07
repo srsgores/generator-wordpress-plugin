@@ -2,7 +2,7 @@
 /**
  * <%= name %>
  *
- * @package   <% _.slugify(name) %>
+ * @package   <%= _.slugify(name) %>
  * @author    <%= authorName %> <<%= authorEmail %>>
  * @license   GPL-2.0+
  * @link      <%= authorURL %>
@@ -12,10 +12,10 @@
 /**
  * <%= name %> class.
  *
- * @package <% _.camelize(name) %>
+ * @package <%= _.camelize(name) %>
  * @author  <%= authorName %> <<%= authorEmail %>>
  */
-class <% _.camelize(name) %>{
+class <%= _.camelize(name) %>{
 	/**
 	 * Plugin version, used for cache-busting of style and script file references.
 	 *

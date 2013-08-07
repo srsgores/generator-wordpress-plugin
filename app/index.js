@@ -80,7 +80,7 @@ wordpressPluginGenerator.prototype.askFor = function askFor() {
 
 		this.currentDate = prefix;
 		this.name = props.name;
-		this.safePluginName = _.slugify(this.name);
+		this.safePluginName = this._.slugify(this.name);
 		this.description = props.description;
 		this.authorName = props.authorName;
 		this.authorEmail = props.authorEmail;
@@ -90,16 +90,6 @@ wordpressPluginGenerator.prototype.askFor = function askFor() {
 		this.authorCompanyName = props.authorCompanyName;
 		cb();
 	}.bind(this));
-};
-
-wordpressPluginGenerator.prototype.dirs = function dirs() {
-	this.mkdir(this.safePluginName);
-	this.mkdir(this.safePluginName + "/scss");
-	this.mkdir(this.safePluginName + "/css");
-	this.mkdir(this.safePluginName + "/js");
-	this.mkdir(this.safePluginName + "/assets");
-	this.mkdir(this.safePluginName + "/views");
-	this.mkdir(this.safePluginName + "/lang");
 };
 
 wordpressPluginGenerator.prototype.emptyIndexFiles = function emptyIndexFiles() {
@@ -123,7 +113,7 @@ wordpressPluginGenerator.prototype.app = function app() {
 
 	//main components
 	this.template("_plugin-name.php", this.safePluginName + ".php");
-	this.template("_class-plugin-name.php", _.camelize(this.name) + ".php");
+	this.template("_class-plugin-name.php", this._.camelize(this.name) + ".php");
 
 	//uninstall
 	this.template("_uninstall.php", "uninstall.php");

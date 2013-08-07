@@ -1,5 +1,5 @@
 {
-	"name": "<% _.slugify(name) %>",
-	"version": "0.0.0",
+	"name": "<%= _.slugify(name) %>",
+	"version": "1.0.0",
 	"dependencies": {}
 }

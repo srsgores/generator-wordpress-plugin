@@ -2,7 +2,7 @@
 /**
  * Fired when the plugin is uninstalled.
  *
- * @package   <% _.slugify(name) %>
+ * @package   <%= _.slugify(name) %>
  * @author    <%= authorName %> <<%= authorEmail %>>
  * @license   GPL-2.0+
  * @link      <%= authorURL %>

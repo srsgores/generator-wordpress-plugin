@@ -4,7 +4,7 @@
  *
  * <%= description %>
  *
- * @package   <% _.slugify(name) %>
+ * @package   <%= _.slugify(name) %>
  * @author    <%= authorName %> <<%= authorEmail %>>
  * @license   GPL-2.0+
  * @link      <%= authorURL %>
@@ -24,15 +24,14 @@
  */
 
 // If this file is called directly, abort.
-if ( ! defined( "WPINC" ) ) {
+if (!defined("WPINC")) {
 	die;
 }
 
-require_once( plugin_dir_path( __FILE__ ) . "<% _.camelize(name) %>.php" );
+require_once(plugin_dir_path(__FILE__) . "<%= _.camelize(name) %>.php");
 
 // Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
-register_activation_hook( __FILE__, array( "<% _.camelize(name) %>", "activate" ) );
-register_deactivation_hook( __FILE__, array( "<% _.camelize(name) %>", "deactivate" ) );
+register_activation_hook(__FILE__, array("<%= _.camelize(name) %>", "activate"));
+register_deactivation_hook(__FILE__, array("<%= _.camelize(name) %>", "deactivate"));
 
-// TODO: replace Plugin_Name with the name of the plugin defined in `class-plugin-name.php`
-<% _.camelize(name) %>::get_instance();
+<%= _.camelize(name) %>::get_instance();

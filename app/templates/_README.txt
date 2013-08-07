@@ -1,4 +1,4 @@
-=== <% _.slugify(name) %> ===
+=== <%= _.slugify(name) %> ===
 Contributors: <%= authorGitHub %>
 Donate link: <%= authorURL %>
 Tags: comments, spam
@@ -8,17 +8,17 @@ Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+<%= description %>
 
 == Description ==
 
-<%= description %>
+<%= description %> (Longer description here)
 
 == Installation ==
 
-1. Upload `<% _.slugify(name).php` to the `/wp-content/plugins/` directory
+1. Upload `<%= _.slugify(name).php %>` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the "Plugins" menu in WordPress
-1. Place `<?php do_action("plugin_name_hook"); ?>` in your templates
+1. Place `<?php do_action("<%= safePluginName %>_hook"); ?>` in your templates
 
 == Screenshots ==
 
