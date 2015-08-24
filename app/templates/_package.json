@@ -1,5 +1,5 @@
 {
-	"name": "<%= _.slugify(name) %>",
+	"name": "<%= safePluginName %>",
 	"version": "1.0.0",
 	"dependencies": {}
 }
