@@ -1,7 +1,8 @@
 "use strict";
-var util = require("util");
-var path = require("path");
-var yeoman = require("yeoman-generator");
+var util 		= require("util");
+var path 		= require("path");
+var yeoman 	= require("yeoman-generator");
+var _ 			= require("underscore.string");
 
 var wordpressPluginGenerator = module.exports = function wordpressPluginGenerator(args, options, config) {
 	yeoman.generators.Base.apply(this, arguments);
@@ -77,10 +78,11 @@ wordpressPluginGenerator.prototype.askFor = function askFor() {
 		var prefix = today.getUTCMonth() + 1;
 		prefix += "-" + today.getDate();
 		prefix += "-" + today.getFullYear();
-
 		this.currentDate = prefix;
 		this.name = props.name;
-		this.safePluginName = this._.slugify(this.name);
+		console.log( _.slugify('THis thes') );
+		this.safePluginName = _.slugify(this.appname);
+		this.camelizePlugname = _.camelize(this.appname);
 		this.description = props.description;
 		this.authorName = props.authorName;
 		this.authorEmail = props.authorEmail;
@@ -113,7 +115,7 @@ wordpressPluginGenerator.prototype.app = function app() {
 
 	//main components
 	this.template("_plugin-name.php", this.safePluginName + ".php");
-	this.template("_class-plugin-name.php", this._.camelize(this.name) + ".php");
+	this.template("_class-plugin-name.php", _.camelize(this.appname) + ".php");
 
 	//uninstall
 	this.template("_uninstall.php", "uninstall.php");

@@ -4,7 +4,7 @@
  *
  * <%= description %>
  *
- * @package   <%= _.slugify(name) %>
+ * @package   <%= safePluginName %>
  * @author    <%= authorName %> <<%= authorEmail %>>
  * @license   GPL-2.0+
  * @link      <%= authorURL %>
@@ -28,10 +28,10 @@ if (!defined("WPINC")) {
 	die;
 }
 
-require_once(plugin_dir_path(__FILE__) . "<%= _.camelize(name) %>.php");
+require_once(plugin_dir_path(__FILE__) . "<%= camelizePlugname %>.php");
 
 // Register hooks that are fired when the plugin is activated, deactivated, and uninstalled, respectively.
-register_activation_hook(__FILE__, array("<%= _.camelize(name) %>", "activate"));
-register_deactivation_hook(__FILE__, array("<%= _.camelize(name) %>", "deactivate"));
+register_activation_hook(__FILE__, array("<%= camelizePlugname %>", "activate"));
+register_deactivation_hook(__FILE__, array("<%= camelizePlugname %>", "deactivate"));
 
-<%= _.camelize(name) %>::get_instance();
+<%= camelizePlugname %>::get_instance();
